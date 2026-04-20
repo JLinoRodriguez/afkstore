@@ -1,0 +1,56 @@
+# Dependencias de Node.js (React y Backend)
+node_modules/
+jspm_packages/
+
+# Entorno y Secretos (¡Muy importante para Postgres/Mongo!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# Build y Producción
+dist/
+build/
+out/
+.next/
+
+# Logs de error y depuración
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Herramientas de Base de Datos
+# Excluir dumps de Postgres o archivos locales de MongoDB
+*.sql
+*.dump
+dump/
+data/
+*.db
+
+# Configuración del Sistema Operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores de Código
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Testing
+coverage/
+.nyc_output
+
+# Otros
+.cache/
+package-lock.json
+# (Nota: Algunos prefieren subir package-lock.json, 
+# pero en proyectos de aprendizaje o con pnpm a veces se ignora)
