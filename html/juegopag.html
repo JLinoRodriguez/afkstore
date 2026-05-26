@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AFK Store | Diseño Terminado</title>
+    <title>AFK Store | God of War</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body id="pagina-juego">
-<!-----------------------------------------------------------------------------------------------HEADER------------------------------------------------------------------------------------------------------->
-    <header>
+<header>
         <div>
             <i class="fa-solid fa-gamepad"></i> AFK
         </div>
         <nav>
             <ul>
-                <li><a href="#">Tienda</a></li>
+                <li><a href="../index.html">Tienda</a></li>
                 <li><a href="#">Biblioteca</a></li>
-                <li><a href="#">Comunidad</a></li>
-                <li><a href="#">Perfil</a></li>
+                <li><a href="comunidad.html">Comunidad</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
             </ul>
         </nav>
         <div>
@@ -27,13 +26,13 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <div>
-                <i class="fa-regular fa-user"></i>
+                <a href="perfil.html">
+                    <i class="fa-solid fa-user"></i>
+                </a>
             </div>
         </div>
     </header>
-<!-----------------------------------------------------------------------------------------------HEADER------------------------------------------------------------------------------------------------------->
-<!-----------------------------------------------------------------------------------------------MAIN---------------------------------------------------------------------------------------------------------->    
-    <main>
+<main>
         <section class="detalles-juego">
             <div class="imagen-juego">
                 </div>
@@ -50,30 +49,27 @@
                         <i class="fa-regular fa-star"></i>
                     </div>
                     <div class="calificacion">
-                        86 <i class="fa-solid fa-chart-pie"></i>
+                        92 <i class="fa-solid fa-chart-pie"></i>
                     </div>
                 </div>
 
                 <p class="descripcion">
-                    Un padre borracho le pega a su hijo y se lo lleva servicios infantiles
-                    <br><br>
-                    Adentrate en una aventura para recuperar tu cenicero personal xd
+                    Desde Santa Monica Studio llega la secuela del aclamado por la crítica God of War (2018). Fimbulvetr ya está en camino. Kratos y Atreus deben viajar a cada uno de los nueve reinos en búsqueda de respuestas, mientras que las fuerzas asgardianas se preparan para una batalla profetizada que terminará con el mundo. En el camino explorarán paisajes increíbles y míticos, y se enfrentarán a aterradores enemigos en la forma de dioses nórdicos y monstruos. La amenaza del Ragnarök cada vez está más cerca. Kratos y Atreus deben elegir entre su propia seguridad y la seguridad de los reinos.
                 </p>
             </div>
         </section>
 
         <section class="video-juego">
-            <button class="boton-izquierdo"><i class="fa-solid fa-chevron-left"></i></button>
-            
-            <div class="boton-play">
-                <i class="fa-solid fa-play"></i>
-            </div>
-            
-            <button class="boton-derecho"><i class="fa-solid fa-chevron-right"></i></button>
+            <iframe 
+                src="https://www.youtube.com/embed/vtFhDrMIZjE" 
+                title="God Of War Ragnarok Trailer" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
         </section>
 
         <section class="section-reseñas">
-            <h2 class="titulo-reseña">Ultimas Reseñas</h2>
+            <h2>Ultimas Reseñas</h2>
             
             <div class="reseñas-grid">
                 
@@ -85,13 +81,32 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <h3>La cagada ese Kratos</h3>
-                    <p class="reseña">Me hizo acordar a mi viejita que me abandono en la av. abancay</p>
+                    <h3>Obra maestra indiscutible</h3>
+                    <p class="reseña">Supera al juego de 2018 en todos los aspectos. La historia te atrapa desde el primer minuto y el desarrollo de Kratos y Atreus es increíble. Vale cada centavo.</p>
                     <div class="reseñador">
-                        <img src="https://i.pravatar.cc/150?img=44" alt="Avatar" class="avatar">
+                        <i class="fa-solid fa-circle-user icono-usuario-default"></i>
                         <div class="detalles-reseñador">
-                            <span class="nombre">Carla Mendoza</span>
-                            <span class="fecha">24 May 2026</span>
+                            <span class="nombre">Carlos_Gamer</span>
+                            <span class="fecha">25 May 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta-reseña">
+                    <div class="estrellas">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Combate muy satisfactorio</h3>
+                    <p class="reseña">Me encanta cómo han mejorado el sistema de combate. Las nuevas armas y habilidades le dan mucha más verticalidad y dinamismo a las peleas. Los jefes son espectaculares.</p>
+                    <div class="reseñador">
+                        <i class="fa-solid fa-circle-user icono-usuario-default"></i>
+                        <div class="detalles-reseñador">
+                            <span class="nombre">Alex Hunter</span>
+                            <span class="fecha">21 May 2026</span>
                         </div>
                     </div>
                 </div>
@@ -104,12 +119,12 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-regular fa-star"></i>
                     </div>
-                    <h3>Me hizo acordar a mi viejo</h3>
-                    <p class="reseña">Me trajo nostalgia de cuando me descolumnaba mi viejo a punta de escobazos.</p>
+                    <h3>Excelente optimización</h3>
+                    <p class="reseña">Lo estoy jugando en PC y corre de maravilla. Los gráficos son alucinantes y los paisajes de los Nueve Reinos te dejan sin aliento. Un trabajo impecable en el port.</p>
                     <div class="reseñador">
-                        <img src="https://i.pravatar.cc/150?img=33" alt="Avatar" class="avatar">
+                        <i class="fa-solid fa-circle-user icono-usuario-default"></i>
                         <div class="detalles-reseñador">
-                            <span class="nombre">Mateo Ríos</span>
+                            <span class="nombre">PC_Master12</span>
                             <span class="fecha">18 May 2026</span>
                         </div>
                     </div>
@@ -121,15 +136,15 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
                     </div>
-                    <h3>Me hizo sentir cosas de mujer</h3>
-                    <p class="reseña">Ando ovulando y ver el pechito desnudo de kratos hizo que se mojara todo mi piso</p>
+                    <h3>Muy bueno, pero lento al inicio</h3>
+                    <p class="reseña">El juego es fantástico, aunque siento que algunas partes de exploración al principio se hacen un poco largas. Fuera de eso, es un juegazo con misiones secundarias de primer nivel.</p>
                     <div class="reseñador">
-                        <img src="https://i.pravatar.cc/150?img=5" alt="Avatar" class="avatar">
-                        <div class="detalles-reseñadors">
-                            <span class="nombre">Lucía Torres</span>
-                            <span class="fecha">12 May 2026</span>
+                        <i class="fa-solid fa-circle-user icono-usuario-default"></i>
+                        <div class="detalles-reseñador">
+                            <span class="nombre">Martín Ríos</span>
+                            <span class="fecha">15 May 2026</span>
                         </div>
                     </div>
                 </div>
@@ -139,54 +154,35 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
                     </div>
-                    <h3>Mi parte favorita es cuando se enfrenta a la gorda de la muni</h3>
-                    <p class="reseña">Odio a los gordos causa, por suerte kratos esta maceta sino drop en one</p>
+                    <h3>Un final épico y emotivo</h3>
+                    <p class="reseña">La culminación de la saga nórdica no decepciona. Tiene momentos que me sacaron un par de lágrimas y la banda sonora es una completa locura. Totalmente recomendado.</p>
                     <div class="reseñador">
-                        <img src="https://i.pravatar.cc/150?img=11" alt="Avatar" class="avatar">
+                        <i class="fa-solid fa-circle-user icono-usuario-default"></i>
                         <div class="detalles-reseñador">
-                            <span class="nombre">Diego Salas</span>
+                            <span class="nombre">Valquiria_X</span>
+                            <span class="fecha">10 May 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta-reseña">
+                    <div class="estrellas">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Digno candidato a GOTY</h3>
+                    <p class="reseña">Casi no hay tiempos de carga, el diseño de niveles es magistral y la relación entre los personajes se siente muy humana. Santa Monica Studio lo volvió a hacer.</p>
+                    <div class="reseñador">
+                        <i class="fa-solid fa-circle-user icono-usuario-default"></i>
+                        <div class="detalles-reseñador">
+                            <span class="nombre">Sebastián C.</span>
                             <span class="fecha">05 May 2026</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tarjeta-reseña">
-                    <div class="estrellas">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <h3>El chibolo me cae al huevo</h3>
-                    <p class="reseña">El chibolo me hace acordar a los chibolos de la wilson que venden dulces osea.</p>
-                    <div class="reseñador">
-                        <img src="https://i.pravatar.cc/150?img=49" alt="Avatar" class="avatar">
-                        <div class="detalles-reseñador">
-                            <span class="nombre">Sofía Castro</span>
-                            <span class="fecha">01 May 2026</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tarjeta-reseña">
-                    <div class="estrellas">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <h3>Optimización perfecta</h3>
-                    <p class="reseña">Corre excelente en mi PC sin bajones de FPS. La transición entre zonas es súper fluida. Muy buen trabajo de los desarrolladores.</p>
-                    <div class="reseñador">
-                        <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="avatar">
-                        <div class="detalles-reseñador">
-                            <span class="nombre">Javier Luna</span>
-                            <span class="fecha">28 Apr 2026</span>
                         </div>
                     </div>
                 </div>
@@ -194,10 +190,7 @@
             </div>
         </section>
     </main>
-<!-----------------------------------------------------------------------------------------------MAIN---------------------------------------------------------------------------------------------------------->    
-<!-----------------------------------------------------------------------------------------------FOOTER---------------------------------------------------------------------------------------------------------->    
-
-    <footer>
+<footer>
         <div>
             <div>
                 AFK @ 2026. Todos los derechos reservados.
@@ -211,7 +204,5 @@
             <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
     </footer>
-<!-----------------------------------------------------------------------------------------------FOOTER---------------------------------------------------------------------------------------------------------->    
-
 </body>
 </html>
