@@ -45,6 +45,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+    position: sticky;  
+    top: 0;         
+    z-index: 1000;     
 }
 
 header nav ul {
@@ -892,6 +896,13 @@ footer div {
     display: flex;
     align-items: center;
     gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .info-usuario-post {
@@ -940,4 +951,14 @@ footer div {
 
 .interacciones span:hover {
     color: #66c0f4;
+}
+
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.tarjeta-descuentos:hover {
+    animation: latido 1s infinite; 
 }
