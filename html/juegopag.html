@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
+
 <body id="pagina-juego">
-<header>
-        <div>
-            <i class="fa-solid fa-gamepad"></i> AFK
-        </div>
+    <header>
+        <a href="../index.html" class="logo">
+            <i class="fa-solid fa-gamepad"></i><span class="logo-texto"> AFK</span>
+        </a>
         <nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación">
+                <i class="fa-solid fa-bars"></i>
+            </button>
             <ul>
                 <li><a href="../index.html">Tienda</a></li>
                 <li><a href="#">Biblioteca</a></li>
@@ -26,175 +31,20 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <div>
-                <a href="perfil.html">
-                    <i class="fa-solid fa-user"></i>
+                <a href="carrito.html" title="Ver carrito">
+                    <i class="fa-solid fa-cart-shopping"></i>
                 </a>
             </div>
         </div>
     </header>
-<main>
-        <section class="detalles-juego">
-            <div class="imagen-juego">
-                </div>
-            
-            <div class="info-juego">
-                <h1>God of war</h1>
-                
-                <div class="calificacion-juego">
-                    <div class="estrellas">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <div class="calificacion">
-                        92 <i class="fa-solid fa-chart-pie"></i>
-                    </div>
-                </div>
-
-                <p class="descripcion">
-                    Desde Santa Monica Studio llega la secuela del aclamado por la crítica God of War (2018). Fimbulvetr ya está en camino. Kratos y Atreus deben viajar a cada uno de los nueve reinos en búsqueda de respuestas, mientras que las fuerzas asgardianas se preparan para una batalla profetizada que terminará con el mundo. En el camino explorarán paisajes increíbles y míticos, y se enfrentarán a aterradores enemigos en la forma de dioses nórdicos y monstruos. La amenaza del Ragnarök cada vez está más cerca. Kratos y Atreus deben elegir entre su propia seguridad y la seguridad de los reinos.
-                </p>
-            </div>
-        </section>
-
-        <section class="video-juego">
-            <iframe 
-                src="https://www.youtube.com/embed/vtFhDrMIZjE" 
-                title="God Of War Ragnarok Trailer" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </section>
-
-        <section class="section-reseñas">
-            <h2>Ultimas Reseñas</h2>
-            
-            <div class="reseñas-grid">
-                
-                <div class="tarjeta-reseña">
-                    <div class="estrellas">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <h3>Obra maestra indiscutible</h3>
-                    <p class="reseña">Supera al juego de 2018 en todos los aspectos. La historia te atrapa desde el primer minuto y el desarrollo de Kratos y Atreus es increíble. Vale cada centavo.</p>
-                    <div class="reseñador">
-                        <i class="fa-solid fa-circle-user icono-usuario-default"></i>
-                        <div class="detalles-reseñador">
-                            <span class="nombre">Carlos_Gamer</span>
-                            <span class="fecha">25 May 2026</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tarjeta-reseña">
-                    <div class="estrellas">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <h3>Combate muy satisfactorio</h3>
-                    <p class="reseña">Me encanta cómo han mejorado el sistema de combate. Las nuevas armas y habilidades le dan mucha más verticalidad y dinamismo a las peleas. Los jefes son espectaculares.</p>
-                    <div class="reseñador">
-                        <i class="fa-solid fa-circle-user icono-usuario-default"></i>
-                        <div class="detalles-reseñador">
-                            <span class="nombre">Alex Hunter</span>
-                            <span class="fecha">21 May 2026</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tarjeta-reseña">
-                    <div class="estrellas">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <h3>Excelente optimización</h3>
-                    <p class="reseña">Lo estoy jugando en PC y corre de maravilla. Los gráficos son alucinantes y los paisajes de los Nueve Reinos te dejan sin aliento. Un trabajo impecable en el port.</p>
-                    <div class="reseñador">
-                        <i class="fa-solid fa-circle-user icono-usuario-default"></i>
-                        <div class="detalles-reseñador">
-                            <span class="nombre">PC_Master12</span>
-                            <span class="fecha">18 May 2026</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tarjeta-reseña">
-                    <div class="estrellas">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <h3>Muy bueno, pero lento al inicio</h3>
-                    <p class="reseña">El juego es fantástico, aunque siento que algunas partes de exploración al principio se hacen un poco largas. Fuera de eso, es un juegazo con misiones secundarias de primer nivel.</p>
-                    <div class="reseñador">
-                        <i class="fa-solid fa-circle-user icono-usuario-default"></i>
-                        <div class="detalles-reseñador">
-                            <span class="nombre">Martín Ríos</span>
-                            <span class="fecha">15 May 2026</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tarjeta-reseña">
-                    <div class="estrellas">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <h3>Un final épico y emotivo</h3>
-                    <p class="reseña">La culminación de la saga nórdica no decepciona. Tiene momentos que me sacaron un par de lágrimas y la banda sonora es una completa locura. Totalmente recomendado.</p>
-                    <div class="reseñador">
-                        <i class="fa-solid fa-circle-user icono-usuario-default"></i>
-                        <div class="detalles-reseñador">
-                            <span class="nombre">Valquiria_X</span>
-                            <span class="fecha">10 May 2026</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tarjeta-reseña">
-                    <div class="estrellas">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <h3>Digno candidato a GOTY</h3>
-                    <p class="reseña">Casi no hay tiempos de carga, el diseño de niveles es magistral y la relación entre los personajes se siente muy humana. Santa Monica Studio lo volvió a hacer.</p>
-                    <div class="reseñador">
-                        <i class="fa-solid fa-circle-user icono-usuario-default"></i>
-                        <div class="detalles-reseñador">
-                            <span class="nombre">Sebastián C.</span>
-                            <span class="fecha">05 May 2026</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+    <main id="game-content-container">
+        <!-- Rellenado dinámicamente por js/game.js -->
     </main>
-<footer>
+    <footer>
         <div>
-            <div>
-                AFK @ 2026. Todos los derechos reservados.
-            </div>
+            <a href="#">Nosotros</a>
+            <a href="#">Legal</a>
+            <a href="#">Contáctanos</a>
         </div>
         <div class="iconos-redes-sociales">
             <a href="#"><i class="fa-brands fa-youtube"></i></a>
@@ -203,6 +53,12 @@
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
             <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
+        <div>
+            AFK @ 2026. Todos los derechos reservados.
+        </div>
     </footer>
+    <script src="../js/game.js"></script>
+    <script src="../js/script.js"></script>
 </body>
+
 </html>

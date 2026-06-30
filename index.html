@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AFK Store | Diseño Terminado</title>
+    <title>AFK Store | Tienda</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body id="Pagina Principal">
-<!-----------------------------------------------------------------------------------------------HEADER------------------------------------------------------------------------------------------------------->
-  <header>
-        <div>
-            <i class="fa-solid fa-gamepad"></i> AFK
-        </div>
+    <!-----------------------------------------------------------------------------------------------HEADER------------------------------------------------------------------------------------------------------->
+    <header>
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-gamepad"></i><span class="logo-texto"> AFK</span>
+        </a>
         <nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación">
+                <i class="fa-solid fa-bars"></i>
+            </button>
             <ul>
                 <li><a href="index.html">Tienda</a></li>
                 <li><a href="#">Biblioteca</a></li>
@@ -27,56 +32,27 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <div>
-                <a href="html/perfil.html">
-                    <i class="fa-regular fa-user"></i>
+                <a href="html/carrito.html" title="Ver carrito">
+                    <i class="fa-solid fa-cart-shopping"></i>
                 </a>
             </div>
         </div>
     </header>
-<!-----------------------------------------------------------------------------------------------HEADER------------------------------------------------------------------------------------------------------->
-<!-----------------------------------------------------------------------------------------------MAIN---------------------------------------------------------------------------------------------------------->    
+    <!-----------------------------------------------------------------------------------------------HEADER------------------------------------------------------------------------------------------------------->
+    <!-----------------------------------------------------------------------------------------------MAIN---------------------------------------------------------------------------------------------------------->
     <main>
         <h2>Destacados</h2>
-        <section class="destacados-carrusel">
-            <a href="html/juegopag.html" class="enlace-fondo"></a>
-
-            <button class="boton-izquierdo"><i class="fa-solid fa-chevron-left"></i></button>
-            <div class="Contenedor-Puntos">
-                <div class="Puntos"></div>
-                <div class="Puntos"></div>
-                <div class="Puntos"></div>
-                <div class="Puntos"></div>
-                <div class="Puntos"></div>
-            </div>
-            <button class="boton-derecho"><i class="fa-solid fa-chevron-right"></i></button>
+        <section class="destacados-carrusel" id="featured-slider-container">
+            <!-- Generado dinámicamente por js/slider.js -->
         </section>
 
-        <h2>Descuentos</h2>
-        <section class="seccion-descuentos">
-            <div class="tarjeta-descuentos">
-                <div class="tarjeta 1"></div>
-                <div>-75%</div>
-            </div>
-            <div class="tarjeta-descuentos">
-                <div class="tarjeta 2"></div>
-                <div>-35%</div>
-            </div>
-        </section>
-
-        <div>
-            <a href="#"><i class="fa-solid fa-chevron-left"></i> Previous</a>
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <span>...</span>
-            <a href="#">11</a>
-            <a href="#">Next <i class="fa-solid fa-chevron-right"></i></a>
+        <h2>Categorías</h2>
+        <div class="categorias-grid" id="catalog-categories-container">
+            <!-- Generado dinámicamente por js/catalog.js -->
         </div>
     </main>
-<!-----------------------------------------------------------------------------------------------MAIN---------------------------------------------------------------------------------------------------------->    
-<!-----------------------------------------------------------------------------------------------FOOTER---------------------------------------------------------------------------------------------------------->    
+    <!-----------------------------------------------------------------------------------------------MAIN---------------------------------------------------------------------------------------------------------->
+    <!-----------------------------------------------------------------------------------------------FOOTER---------------------------------------------------------------------------------------------------------->
     <footer>
         <div>
             <a href="#">Nosotros</a>
@@ -94,7 +70,11 @@
             AFK @ 2026. Todos los derechos reservados.
         </div>
     </footer>
-<!-----------------------------------------------------------------------------------------------FOOTER---------------------------------------------------------------------------------------------------------->    
-
+    <!-----------------------------------------------------------------------------------------------FOOTER---------------------------------------------------------------------------------------------------------->
+    <script src="js/game.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
