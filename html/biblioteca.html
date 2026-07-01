@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AFK Store | Tienda</title>
+    <title>AFK Store | Biblioteca</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
-<body id="Pagina Principal">
+<body id="pagina-biblioteca">
     <!-----------------------------------------------------------------------------------------------HEADER------------------------------------------------------------------------------------------------------->
     <header>
-        <a href="index.html" class="logo">
+        <a href="../index.html" class="logo">
             <i class="fa-solid fa-gamepad"></i><span class="logo-texto"> AFK</span>
         </a>
         <nav>
@@ -20,10 +20,10 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
             <ul>
-                <li><a href="index.html" class="active-nav-link">TIENDA</a></li>
-                <li><a href="html/biblioteca.html">BIBLIOTECA</a></li>
-                <li><a href="html/comunidad.html">COMUNIDAD</a></li>
-                <li><a href="html/perfil.html">PERFIL</a></li>
+                <li><a href="../index.html">TIENDA</a></li>
+                <li><a href="biblioteca.html" class="active-nav-link">BIBLIOTECA</a></li>
+                <li><a href="comunidad.html">COMUNIDAD</a></li>
+                <li><a href="perfil.html">PERFIL</a></li>
             </ul>
         </nav>
         <div>
@@ -32,26 +32,32 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <div>
-                <a href="html/carrito.html" title="Ver carrito">
+                <a href="carrito.html" title="Ver carrito">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </a>
             </div>
         </div>
     </header>
     <!-----------------------------------------------------------------------------------------------HEADER------------------------------------------------------------------------------------------------------->
+    
     <!-----------------------------------------------------------------------------------------------MAIN---------------------------------------------------------------------------------------------------------->
-    <main>
-        <h2>Destacados</h2>
-        <section class="destacados-carrusel" id="featured-slider-container">
-            <!-- Generado dinámicamente por js/slider.js -->
+    <main class="biblioteca-main">
+        <section class="biblioteca-seccion">
+            <h2>Recién Adquiridos</h2>
+            <div class="recien-adquiridos-fila" id="recien-adquiridos-container">
+                <!-- Generado dinámicamente por js/biblioteca.js -->
+            </div>
         </section>
 
-        <h2>Categorías</h2>
-        <div class="categorias-grid" id="catalog-categories-container">
-            <!-- Generado dinámicamente por js/catalog.js -->
-        </div>
+        <section class="biblioteca-seccion" style="margin-top: 40px;">
+            <h2>Todos tus Juegos</h2>
+            <div class="todos-juegos-grid" id="todos-juegos-container">
+                <!-- Generado dinámicamente por js/biblioteca.js -->
+            </div>
+        </section>
     </main>
     <!-----------------------------------------------------------------------------------------------MAIN---------------------------------------------------------------------------------------------------------->
+
     <!-----------------------------------------------------------------------------------------------FOOTER---------------------------------------------------------------------------------------------------------->
     <footer>
         <div>
@@ -71,10 +77,10 @@
         </div>
     </footer>
     <!-----------------------------------------------------------------------------------------------FOOTER---------------------------------------------------------------------------------------------------------->
-    <script src="js/game.js"></script>
-    <script src="js/slider.js"></script>
-    <script src="js/catalog.js"></script>
-    <script src="js/script.js"></script>
+    
+    <script src="../js/game.js"></script>
+    <script src="../js/biblioteca.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

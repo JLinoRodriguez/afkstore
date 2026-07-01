@@ -9,7 +9,11 @@ const gamesMap = {
     'monster-hunter-wilds': MonsterHunterWilds,
     'cod-black-ops-7': CODBlackOps7,
     'fc-26': FC26,
-    'arc-riders': ArcRiders
+    'arc-riders': ArcRiders,
+    'escape-the-backrooms': EscapeTheBackrooms,
+    'dead-by-daylight': DeadByDaylight,
+    'dead-space': DeadSpace,
+    'outlast': Outlast
 };
 
 // Cargar la información del juego basándose en su ID
@@ -200,6 +204,32 @@ document.addEventListener('DOMContentLoaded', () => {
             // Deshabilitar botón para evitar dobles clics
             btnSubmitPayment.disabled = true;
             btnSubmitPayment.classList.add('disabled');
+
+            // Guardar juegos recién adquiridos en biblioteca
+            const cartIds = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cartIds.length > 0) {
+                const defaultOwnedGames = [
+                    'god-of-war',
+                    'baldurs-gate-3',
+                    'dota-2',
+                    'gta-v',
+                    'resident-evil-9',
+                    'subnautica-2',
+                    'monster-hunter-wilds',
+                    'cod-black-ops-7'
+                ];
+                let ownedGames = JSON.parse(localStorage.getItem('ownedGames')) || defaultOwnedGames;
+                
+                // Añadir juegos que no estuvieran ya en la biblioteca
+                cartIds.forEach(id => {
+                    if (!ownedGames.includes(id)) {
+                        ownedGames.push(id);
+                    }
+                });
+
+                localStorage.setItem('ownedGames', JSON.stringify(ownedGames));
+                localStorage.setItem('recentlyPurchasedGames', JSON.stringify(cartIds));
+            }
 
             // Limpiar carrito de compras
             localStorage.removeItem('cart');

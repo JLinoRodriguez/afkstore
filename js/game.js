@@ -161,6 +161,24 @@ class GamePage {
                 btnBuy.style.transform = 'scale(0.95)';
                 setTimeout(() => {
                     btnBuy.style.transform = 'none';
+                    
+                    // Verificar si ya posee el juego
+                    const defaultOwnedGames = [
+                        'god-of-war',
+                        'baldurs-gate-3',
+                        'dota-2',
+                        'gta-v',
+                        'resident-evil-9',
+                        'subnautica-2',
+                        'monster-hunter-wilds',
+                        'cod-black-ops-7'
+                    ];
+                    const ownedGames = JSON.parse(localStorage.getItem('ownedGames')) || defaultOwnedGames;
+                    if (ownedGames.includes(this.data.id)) {
+                        alert(`Ya tienes "${this.data.title}" en tu biblioteca. No puedes volver a comprarlo.`);
+                        return;
+                    }
+
                     let cart = JSON.parse(localStorage.getItem('cart')) || [];
                     if (!cart.includes(this.data.id)) {
                         cart.push(this.data.id);

@@ -119,6 +119,151 @@ header .logo i {
     margin-right: 5px;
 }
 
+header nav ul li a {
+    color: #c7d5e0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s, border-color 0.3s;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+header nav ul li a:hover {
+    color: #66c0f4;
+}
+
+header nav ul li a.active-nav-link {
+    color: #66c0f4 !important;
+    border-bottom: 2px solid #66c0f4 !important;
+}
+
+/* ==========================================================================
+   PÁGINA DE BIBLIOTECA
+   ========================================================================== */
+.biblioteca-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.biblioteca-seccion {
+    margin-bottom: 40px;
+}
+
+.biblioteca-seccion h2 {
+    font-size: 24px;
+    border-bottom: 2px solid #316282;
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    width: 100%;
+    display: block;
+}
+
+.recien-adquiridos-fila {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+}
+
+.recien-adquiridos-fila .tarjeta-juego {
+    flex: 0 0 280px;
+    height: auto;
+}
+
+/* Scrollbar personalizado para Recién Adquiridos */
+.recien-adquiridos-fila::-webkit-scrollbar {
+    height: 8px;
+}
+.recien-adquiridos-fila::-webkit-scrollbar-track {
+    background: #171a21;
+    border-radius: 4px;
+}
+.recien-adquiridos-fila::-webkit-scrollbar-thumb {
+    background: #316282;
+    border-radius: 4px;
+}
+.recien-adquiridos-fila::-webkit-scrollbar-thumb:hover {
+    background: #66c0f4;
+}
+
+.todos-juegos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta-biblioteca .info-tarjeta {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #1b2838;
+}
+
+.btn-jugar-biblioteca {
+    background-color: #66c0f4;
+    color: #171a21;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.2s, transform 0.2s, color 0.2s;
+}
+
+.tarjeta-biblioteca:hover .btn-jugar-biblioteca {
+    background-color: #ffffff;
+    color: #171a21;
+    transform: scale(1.03);
+}
+
+.biblioteca-vacia-mensaje {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #171a21;
+    border-radius: 8px;
+    border: 2px dashed #316282;
+    width: 100%;
+    gap: 15px;
+    color: #a3c2d1;
+    margin: 10px 0;
+}
+
+.biblioteca-vacia-mensaje i {
+    font-size: 40px;
+    color: #316282;
+}
+
+.biblioteca-vacia-mensaje p {
+    font-size: 16px;
+}
+
+.btn-ir-tienda {
+    background-color: #316282;
+    color: white;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-ir-tienda:hover {
+    background-color: #66c0f4;
+    color: #171a21;
+}
+
 /* ==========================================================================
    PÁGINA PRINCIPAL (Index)
    ========================================================================== */
@@ -2025,6 +2170,12 @@ footer div {
 
     header nav ul li:last-child a {
         border-bottom: none;
+    }
+
+    header nav ul li a.active-nav-link {
+        color: #66c0f4 !important;
+        border-bottom: 1px solid #66c0f4 !important;
+        padding-left: 5px;
     }
 
     /* Responsividad del formulario de perfil */

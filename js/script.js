@@ -99,6 +99,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Mostrar número de reseñas creadas por el usuario en comunidad
         updateReviewsCount(savedProfile.alias);
+
+        // Actualizar dinámicamente el número de juegos en biblioteca
+        const profileTotalGames = document.getElementById('profile-total-games');
+        if (profileTotalGames) {
+            const defaultOwnedGames = [
+                'god-of-war',
+                'baldurs-gate-3',
+                'dota-2',
+                'gta-v',
+                'resident-evil-9',
+                'subnautica-2',
+                'monster-hunter-wilds',
+                'cod-black-ops-7'
+            ];
+            const ownedIds = JSON.parse(localStorage.getItem('ownedGames')) || defaultOwnedGames;
+            profileTotalGames.textContent = ownedIds.length;
+        }
     }
 
     function updateReviewsCount(aliasName) {
