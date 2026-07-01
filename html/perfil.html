@@ -74,7 +74,7 @@
                 <div class="preview-card-body">
                     <!-- Botón para subir foto -->
                     <input type="file" id="input-foto" accept="image/*" style="display: none;">
-                    <button class="boton-perfil" id="btn-subir-foto" type="button">
+                    <button class="boton-perfil" id="btn-subir-foto" type="button" disabled>
                         <i class="fa-solid fa-cloud-arrow-up"></i> Sube tu avatar
                     </button>
 
@@ -120,12 +120,12 @@
                         <div class="form-grid-campos">
                             <div class="campo-formulario">
                                 <label for="profile-alias">Alias Gamer</label>
-                                <input type="text" id="profile-alias" placeholder="Tu alias..." value="Kratos_Abancay99">
+                                <input type="text" id="profile-alias" placeholder="Tu alias..." value="Kratos_Abancay99" disabled>
                             </div>
                             
                             <div class="campo-formulario">
                                 <label for="profile-connection">Estado de Conexión</label>
-                                <select id="profile-connection" class="select-perfil-input">
+                                <select id="profile-connection" class="select-perfil-input" disabled>
                                     <option value="online">En línea</option>
                                     <option value="playing">Jugando</option>
                                     <option value="away">Ausente</option>
@@ -134,12 +134,12 @@
 
                             <div class="campo-formulario campo-completo">
                                 <label for="profile-status-input">Mensaje de Estado</label>
-                                <input type="text" id="profile-status-input" placeholder="¿Qué tienes en mente?..." value="Ausente comprando pan...">
+                                <input type="text" id="profile-status-input" placeholder="¿Qué tienes en mente?..." value="Ausente comprando pan..." disabled>
                             </div>
 
                             <div class="campo-formulario campo-completo">
                                 <label for="profile-banner-select">Banner de Fondo</label>
-                                <select id="profile-banner-select" class="select-perfil-input">
+                                <select id="profile-banner-select" class="select-perfil-input" disabled>
                                     <option value="default">Por defecto (Abstracto Oscuro)</option>
                                     <option value="gow">God of War Ragnarök</option>
                                     <option value="bg3">Baldur's Gate 3</option>
@@ -154,22 +154,25 @@
                         <div class="form-grid-campos">
                             <div class="campo-formulario campo-completo">
                                 <label for="profile-fullname">Nombre Completo</label>
-                                <input type="text" id="profile-fullname" placeholder="Tu nombre..." value="Diego Salas">
+                                <input type="text" id="profile-fullname" placeholder="Tu nombre..." value="Diego Salas" disabled>
                             </div>
                             
                             <div class="campo-formulario campo-completo">
                                 <label for="profile-email">Correo Electrónico</label>
-                                <input type="email" id="profile-email" placeholder="tucorreo@email.com" value="fantasmadesparta@gmail.com">
+                                <input type="email" id="profile-email" placeholder="tucorreo@email.com" value="fantasmadesparta@gmail.com" disabled>
                             </div>
 
-                            <div class="campo-formulario">
-                                <label for="profile-password">Nueva Contraseña</label>
-                                <input type="password" id="profile-password" placeholder="Nueva contraseña..." value="********">
-                            </div>
-                            
-                            <div class="campo-formulario">
-                                <label for="profile-password-confirm">Confirmar Contraseña</label>
-                                <input type="password" id="profile-password-confirm" placeholder="Confirma contraseña..." value="********">
+                            <div class="campo-formulario campo-completo">
+                                <label for="profile-password">Contraseña</label>
+                                <div class="contrasena-input-button-row">
+                                    <div class="password-input-container">
+                                        <input type="password" id="profile-password" placeholder="Contraseña..." value="********" disabled>
+                                        <button type="button" id="toggle-password-btn" class="toggle-password-btn" aria-label="Mostrar contraseña">
+                                            <i class="fa-solid fa-eye" id="toggle-password-icon"></i>
+                                        </button>
+                                    </div>
+                                    <button type="button" id="btn-cambiar-contrasena" class="btn-nueva-contrasena-field" disabled>Nueva Contraseña</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -179,25 +182,25 @@
                         <div class="form-grid-sociales">
                             <div class="campo-formulario field-con-icono">
                                 <i class="fa-brands fa-facebook-f icon-form"></i>
-                                <input type="text" id="social-fb" placeholder="Facebook Username" value="">
+                                <input type="text" id="social-fb" placeholder="Facebook Username" value="" disabled>
                             </div>
                             <div class="campo-formulario field-con-icono">
                                 <i class="fa-brands fa-twitter icon-form"></i>
-                                <input type="text" id="social-tw" placeholder="Twitter Username" value="">
+                                <input type="text" id="social-tw" placeholder="Twitter Username" value="" disabled>
                             </div>
                             <div class="campo-formulario field-con-icono">
                                 <i class="fa-brands fa-instagram icon-form"></i>
-                                <input type="text" id="social-ig" placeholder="Instagram Username" value="">
+                                <input type="text" id="social-ig" placeholder="Instagram Username" value="" disabled>
                             </div>
                             <div class="campo-formulario field-con-icono">
                                 <i class="fa-brands fa-linkedin-in icon-form"></i>
-                                <input type="text" id="social-li" placeholder="LinkedIn Username" value="">
+                                <input type="text" id="social-li" placeholder="LinkedIn Username" value="" disabled>
                             </div>
                         </div>
                     </div>
 
                     <button type="submit" class="boton-perfil btn-save-profile-changes">
-                        <i class="fa-solid fa-floppy-disk"></i> Guardar Cambios
+                        <i class="fa-solid fa-pen-to-square"></i> Actualizar
                     </button>
                 </form>
             </section>
@@ -220,6 +223,35 @@
             AFK @ 2026. Todos los derechos reservados.
         </div>
     </footer>
+    <!-- Modal Cambiar Contraseña -->
+    <div id="modal-cambiar-contrasena" class="modal-perfil" style="display: none;">
+        <div class="modal-perfil-content">
+            <button type="button" class="modal-close-btn" id="btn-cerrar-modal" aria-label="Cerrar modal">&times;</button>
+            <h3>Cambiar Contraseña</h3>
+            <div class="modal-form-group">
+                <label for="modal-new-password">Nueva Contraseña</label>
+                <div class="password-input-container">
+                    <input type="password" id="modal-new-password" placeholder="Introduce la nueva contraseña...">
+                    <button type="button" class="toggle-password-btn" aria-label="Mostrar contraseña">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-form-group">
+                <label for="modal-confirm-password">Confirmar Contraseña</label>
+                <div class="password-input-container">
+                    <input type="password" id="modal-confirm-password" placeholder="Confirma la nueva contraseña...">
+                    <button type="button" class="toggle-password-btn" aria-label="Mostrar contraseña">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" id="btn-modal-aceptar" class="btn-modal-aceptar" disabled>Aceptar</button>
+            </div>
+        </div>
+    </div>
+
     <script src="../js/script.js"></script>
 </body>
 

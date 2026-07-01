@@ -1148,6 +1148,205 @@ footer div {
     box-shadow: 0 0 10px rgba(102, 192, 244, 0.3);
 }
 
+.formulario-perfil .campo-formulario input:disabled,
+.formulario-perfil .select-perfil-input:disabled {
+    background-color: #0f1118;
+    border-color: rgba(49, 98, 130, 0.2);
+    color: #a3b3c2;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+#btn-subir-foto:disabled {
+    background-color: #0f1118;
+    border-color: rgba(49, 98, 130, 0.2);
+    color: #a3b3c2;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.password-input-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-input-container input {
+    padding-right: 48px !important;
+}
+
+.toggle-password-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #66c0f4;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+    transition: color 0.2s;
+    outline: none;
+}
+
+.toggle-password-btn:hover {
+    color: #ffffff;
+}
+
+.contrasena-input-button-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 15px;
+    width: 100%;
+}
+
+.contrasena-input-button-row .password-input-container {
+    flex: 1;
+}
+
+.btn-nueva-contrasena-field {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #316282;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.btn-nueva-contrasena-field:hover:not(:disabled) {
+    background-color: #66c0f4;
+    color: #171a21;
+}
+
+.btn-nueva-contrasena-field:disabled {
+    background-color: #1c2a35;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Modal Estilos */
+.modal-perfil {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-perfil-content {
+    background-color: #171a21;
+    border: 1px solid #316282;
+    border-radius: 8px;
+    padding: 30px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-perfil-content h3 {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(49, 98, 130, 0.3);
+    padding-bottom: 10px;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #a3b3c2;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-close-btn:hover {
+    color: #ffffff;
+}
+
+.modal-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-form-group label {
+    color: #e1e7eb;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+}
+
+.modal-form-group input {
+    padding: 14px 16px;
+    background-color: #0f1118;
+    border: 1px solid rgba(49, 98, 130, 0.5);
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+.modal-form-group input:focus {
+    border-color: #66c0f4;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-modal-aceptar {
+    background-color: #66c0f4;
+    color: #171a21;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 30px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.2s;
+}
+
+.btn-modal-aceptar:hover:not(:disabled) {
+    background-color: #ffffff;
+}
+
+.btn-modal-aceptar:disabled {
+    background-color: #1c2a35;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
 .btn-save-profile-changes {
     align-self: flex-start;
     margin-top: 10px;

@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const profileFullName = document.getElementById('profile-fullname');
     const profileAlias = document.getElementById('profile-alias');
     const profileEmail = document.getElementById('profile-email');
+    const profilePassword = document.getElementById('profile-password');
     
     // Elementos de la Cabecera de Vista Previa
     const headerAlias = document.getElementById('header-alias');
@@ -87,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (profileConnection) profileConnection.value = savedProfile.connection || "online";
         if (profileStatusInput) profileStatusInput.value = savedProfile.statusMsg || "";
         if (profileBannerSelect) profileBannerSelect.value = savedProfile.banner || "default";
+        if (profilePassword) profilePassword.value = savedProfile.password || "********";
 
         if (savedProfile.social) {
             if (socialFb) socialFb.value = savedProfile.social.fb || "";
@@ -180,39 +182,150 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 5. Guardar cambios en el Perfil Gamer
+    let isEditing = false;
     if (profileForm) {
         profileForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const aliasVal = profileAlias ? profileAlias.value.trim() : "";
-            if (!aliasVal) {
-                alert("Por favor, ingresa un alias de jugador.");
-                return;
-            }
+            const submitBtn = profileForm.querySelector('.btn-save-profile-changes');
 
-            const updatedProfile = {
-                name: profileFullName ? profileFullName.value.trim() : "",
-                alias: aliasVal,
-                email: profileEmail ? profileEmail.value.trim() : "",
-                avatar: avatarDisplayPic ? avatarDisplayPic.src : "https://i.pravatar.cc/300?img=11",
-                connection: profileConnection ? profileConnection.value : "online",
-                statusMsg: profileStatusInput ? profileStatusInput.value.trim() : "",
-                banner: profileBannerSelect ? profileBannerSelect.value : "default",
-                social: {
-                    fb: socialFb ? socialFb.value.trim() : "",
-                    tw: socialTw ? socialTw.value.trim() : "",
-                    ig: socialIg ? socialIg.value.trim() : "",
-                    li: socialLi ? socialLi.value.trim() : ""
+            if (!isEditing) {
+                // Desbloquear campos para editar
+                const inputs = profileForm.querySelectorAll('input, select');
+                inputs.forEach(input => {
+                    if (input.id !== 'profile-password') {
+                        input.disabled = false;
+                    }
+                });
+                if (btnSubirFoto) btnSubirFoto.disabled = false;
+                const btnCambiarContrasena = document.getElementById('btn-cambiar-contrasena');
+                if (btnCambiarContrasena) btnCambiarContrasena.disabled = false;
+
+                isEditing = true;
+                if (submitBtn) {
+                    submitBtn.innerHTML = '<i class="fa-solid fa-floppy-disk"></i> Guardar Cambios';
                 }
-            };
+            } else {
+                // Guardar cambios
+                const aliasVal = profileAlias ? profileAlias.value.trim() : "";
+                if (!aliasVal) {
+                    alert("Por favor, ingresa un alias de jugador.");
+                    return;
+                }
 
-            // Guardar en LocalStorage
-            localStorage.setItem('userProfile', JSON.stringify(updatedProfile));
+                const updatedProfile = {
+                    name: profileFullName ? profileFullName.value.trim() : "",
+                    alias: aliasVal,
+                    email: profileEmail ? profileEmail.value.trim() : "",
+                    avatar: avatarDisplayPic ? avatarDisplayPic.src : "https://i.pravatar.cc/300?img=11",
+                    connection: profileConnection ? profileConnection.value : "online",
+                    statusMsg: profileStatusInput ? profileStatusInput.value.trim() : "",
+                    banner: profileBannerSelect ? profileBannerSelect.value : "default",
+                    password: profilePassword ? profilePassword.value : "********",
+                    social: {
+                        fb: socialFb ? socialFb.value.trim() : "",
+                        tw: socialTw ? socialTw.value.trim() : "",
+                        ig: socialIg ? socialIg.value.trim() : "",
+                        li: socialLi ? socialLi.value.trim() : ""
+                    }
+                };
 
-            // Actualizar contador visual de reseñas
-            updateReviewsCount(aliasVal);
+                // Guardar en LocalStorage
+                localStorage.setItem('userProfile', JSON.stringify(updatedProfile));
 
-            alert("¡Tu Perfil Gamer de AFK Store ha sido guardado y sincronizado!");
+                // Actualizar contador visual de reseñas
+                updateReviewsCount(aliasVal);
+
+                // Bloquear campos de nuevo
+                const inputs = profileForm.querySelectorAll('input, select');
+                inputs.forEach(input => {
+                    input.disabled = true;
+                });
+                if (btnSubirFoto) btnSubirFoto.disabled = true;
+                const btnCambiarContrasena = document.getElementById('btn-cambiar-contrasena');
+                if (btnCambiarContrasena) btnCambiarContrasena.disabled = true;
+
+                isEditing = false;
+                if (submitBtn) {
+                    submitBtn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Actualizar';
+                }
+
+                alert("¡Tu Perfil Gamer de AFK Store ha sido guardado y sincronizado!");
+            }
+        });
+    }
+
+    // Toggle visibilidad de contraseña (soporta múltiples inputs)
+    const togglePasswordButtons = document.querySelectorAll('.toggle-password-btn');
+    togglePasswordButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const container = btn.closest('.password-input-container');
+            if (container) {
+                const input = container.querySelector('input');
+                const icon = btn.querySelector('i');
+                if (input && icon) {
+                    const isPassword = input.getAttribute('type') === 'password';
+                    input.setAttribute('type', isPassword ? 'text' : 'password');
+                    icon.className = isPassword ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye';
+                }
+            }
+        });
+    });
+
+    // Control de la Ventana Emergente (Modal Cambiar Contraseña)
+    const modalCambiarContrasena = document.getElementById('modal-cambiar-contrasena');
+    const btnCambiarContrasena = document.getElementById('btn-cambiar-contrasena');
+    const btnCerrarModal = document.getElementById('btn-cerrar-modal');
+    const btnModalAceptar = document.getElementById('btn-modal-aceptar');
+    
+    const modalNewPassword = document.getElementById('modal-new-password');
+    const modalConfirmPassword = document.getElementById('modal-confirm-password');
+
+    if (btnCambiarContrasena && modalCambiarContrasena) {
+        // Abrir modal
+        btnCambiarContrasena.addEventListener('click', () => {
+            if (modalNewPassword) modalNewPassword.value = '';
+            if (modalConfirmPassword) modalConfirmPassword.value = '';
+            if (btnModalAceptar) btnModalAceptar.disabled = true;
+            modalCambiarContrasena.style.display = 'flex';
+        });
+    }
+
+    if (btnCerrarModal && modalCambiarContrasena) {
+        // Cerrar modal al hacer clic en la X
+        btnCerrarModal.addEventListener('click', () => {
+            modalCambiarContrasena.style.display = 'none';
+        });
+    }
+
+    // Validación en tiempo real de contraseñas idénticas
+    function validateModalPasswords() {
+        if (modalNewPassword && modalConfirmPassword && btnModalAceptar) {
+            const passVal = modalNewPassword.value;
+            const confirmVal = modalConfirmPassword.value;
+            
+            // Habilitar botón de aceptar solo si coinciden y no están vacías
+            if (passVal && confirmVal && passVal === confirmVal) {
+                btnModalAceptar.disabled = false;
+            } else {
+                btnModalAceptar.disabled = true;
+            }
+        }
+    }
+
+    if (modalNewPassword) {
+        modalNewPassword.addEventListener('input', validateModalPasswords);
+    }
+    if (modalConfirmPassword) {
+        modalConfirmPassword.addEventListener('input', validateModalPasswords);
+    }
+
+    if (btnModalAceptar && modalCambiarContrasena && profilePassword) {
+        // Al hacer clic en aceptar, se actualiza el input contraseña principal y se cierra el modal
+        btnModalAceptar.addEventListener('click', () => {
+            profilePassword.value = modalNewPassword.value;
+            modalCambiarContrasena.style.display = 'none';
         });
     }
 
