@@ -13,7 +13,8 @@ const gamesMap = {
     'escape-the-backrooms': EscapeTheBackrooms,
     'dead-by-daylight': DeadByDaylight,
     'dead-space': DeadSpace,
-    'outlast': Outlast
+    'outlast': Outlast,
+    'crimson':CrimsonDesert
 };
 
 // Cargar la información del juego basándose en su ID

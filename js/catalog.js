@@ -129,6 +129,12 @@ class OutlastCard extends BaseGameCard {
     }
 }
 
+class CrimsonCard extends BaseGameCard{
+    constructor() {
+        super(new CrimsonDesert().data);
+    }
+}
+
 // Clase para las Secciones de Categorías del Catálogo
 class CategorySection {
     constructor(name, iconClass, containerId) {
@@ -170,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const accionSec = new CategorySection('Acción', 'fa-solid fa-burst', 'cat-accion');
     const aventuraSec = new CategorySection('Aventura', 'fa-solid fa-compass', 'cat-aventura');
     const deportesSec = new CategorySection('Deportes', 'fa-solid fa-dumbbell', 'cat-deportes');
+    const rpgSec = new CategorySection('')
 
     // 2. Poblar las categorías con las tarjetas correspondientes
     terrorSec.addCard(new ResidentEvil9Card());
@@ -187,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     aventuraSec.addCard(new BaldursGate3Card());
     aventuraSec.addCard(new Subnautica2Card());
     aventuraSec.addCard(new MonsterHunterWildsCard());
+    aventuraSec.addCard(new CrimsonCard());
 
     deportesSec.addCard(new FC26Card());
 

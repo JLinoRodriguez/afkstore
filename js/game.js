@@ -624,6 +624,35 @@ class Outlast extends GamePage {
     }
 }
 
+class CrimsonDesert extends GamePage {
+    constructor(){
+        super({
+            id: "crimson",
+            title: "Crimson Desert",
+            category: "Acción",
+            os: ["windows", "macos"],
+            price: "S/. 249.00",
+            originalprice: "S/. 249.00",
+            discount: "",
+            rating: "89",
+            stars: 4,
+            coverImage: "../imgs/crimson desert.jpg",
+            videoUrl: "https://www.youtube.com/embed/ZdmoGYg8tB0",
+            description: "Crimson Desert es un juego de acción y aventura en mundo abierto ambientado en Pywel. Acompaña a Kliff en su viaje para reunir a los Melenas Grises y salvar el continente. Zonas salvajes, ciudades, ruinas antiguas y el misterioso Abismo; forja tu propio camino a través del combate y la exploración.",
+            developer: "Pearl Abyss",
+            publisher: "Pearl Abyss",
+            releaseDate: "19 Mar 2026",
+            requirements: {
+                min: "SO: Windows 10 64-bit, Procesador: Ryzen 5 2600X / i5-8500, Memoria: 16 GB de RAM, Gráficos: RX 5500 XT / GTX 1060, Almacenamiento: 150 GB de espacio disponible",
+                rec: "SO: Windows 10 64-bit, Procesador: Ryzen 5 5600 / i5-11600K, Memoria: 16 GB de RAM, Gráficos: RX 6700 XT / RTX 2080, Almacenamiento: 150 GB de espacio disponible"
+            },
+            reviews: [
+                { user: "Floyd", rating: 5, title: "Complejo al principio pero satisfactorio de aprender", content: "Los controles y las mecanicas del juego al principio son un poco complicadas pero una vez te adaptas encuentras un mundo abierto muy interesante y divertido de explorar.", date: "2 Jun 2026" }
+            ]
+        });
+    }
+}
+
 // ==========================================================================
 // Enrutador Dinámico de la Página del Juego
 // ==========================================================================
@@ -643,7 +672,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'escape-the-backrooms': EscapeTheBackrooms,
         'dead-by-daylight': DeadByDaylight,
         'dead-space': DeadSpace,
-        'outlast': Outlast
+        'outlast': Outlast,
+        'crimson': CrimsonDesert
     };
 
     // Leer el parámetro ?game= de la URL
