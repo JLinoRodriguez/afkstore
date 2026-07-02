@@ -653,6 +653,35 @@ class CrimsonDesert extends GamePage {
     }
 }
 
+class EstellarBlade extends GamePage {
+    constructor(){
+        super({
+            id: "estelar",
+            title: "Estellar Blade",
+            category: "Acción",
+            os: ["windows"],
+            price: "S/. 133.33",
+            originalprice: "S/. 199.00",
+            discount: "-33%",
+            rating: "92",
+            stars: 5,
+            coverImage: "../imgs/stelar blade.jpg",
+            videoUrl: "https://www.youtube.com/embed/DSznLWimMlU",
+            description: "Evita la extinción de la raza humana en este juego de acción-aventura postapocalíptico: Stellar Blade™. Disfruta de combates feroces y una historia intrigante mientras resuelves los misterios que llevaron a la caída de la Tierra.",
+            developer: "SHIFT UP",
+            publisher: "PS",
+            releaseDate: "11 Jun 2025",
+            requirements: {
+                min: "SO: Windows 10 64-bit, Procesador: Ryzen 5 2600X / i5-8500, Memoria: 16 GB de RAM, Gráficos: RX 5500 XT / GTX 1060, Almacenamiento: 150 GB de espacio disponible",
+                rec: "SO: Windows 10 64-bit, Procesador: Ryzen 5 5600 / i5-11600K, Memoria: 16 GB de RAM, Gráficos: RX 6700 XT / RTX 2080, Almacenamiento: 150 GB de espacio disponible"
+            },
+            reviews: [
+                { user: "eve", rating: 5, title: "El juego es muy frenetico", content: "El juego es muy divertido y con muchos combos, presenta peleas satisfactorios y bosses desafiantes", date: "20 Jun 2026" }
+            ]
+        });
+    }
+}
+
 // ==========================================================================
 // Enrutador Dinámico de la Página del Juego
 // ==========================================================================
@@ -673,7 +702,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'dead-by-daylight': DeadByDaylight,
         'dead-space': DeadSpace,
         'outlast': Outlast,
-        'crimson': CrimsonDesert
+        'crimson': CrimsonDesert,
+        'estelar': EstellarBlade
     };
 
     // Leer el parámetro ?game= de la URL

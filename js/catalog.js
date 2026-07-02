@@ -135,6 +135,12 @@ class CrimsonCard extends BaseGameCard{
     }
 }
 
+class EstellarCard extends BaseGameCard{
+    constructor() {
+        super(new EstellarBlade().data);
+    }
+}
+
 // Clase para las Secciones de Categorías del Catálogo
 class CategorySection {
     constructor(name, iconClass, containerId) {
@@ -190,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     accionSec.addCard(new GTAVCard());
     accionSec.addCard(new CODBlackOps7Card());
     accionSec.addCard(new ArcRidersCard());
+    accionSec.addCard(new EstellarCard());
 
     aventuraSec.addCard(new BaldursGate3Card());
     aventuraSec.addCard(new Subnautica2Card());
